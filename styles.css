@@ -48,7 +48,7 @@ html {
 }
 
 body {
-    
+
     font: var(--paragraph-md);
     background-color: var(--background-primary);
     color: var(--content-primary);
@@ -65,4 +65,137 @@ h2 {
 
 h3 {
     font: var(--display-sm);
+}
+
+h4 {
+    color: var(--content-brand);
+}
+
+/* Colocar color linear gradient no parágrafo */
+p {
+  /* Defina o gradiente como um background */
+  background-image: linear-gradient(var(--gradient-content)); /* */
+
+  /* Recorta o background para que ele apareça apenas onde há texto */
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* Torna o texto transparente para que o background recortado apareça através dele */
+  -webkit-text-fill-color: transparent;
+  color: transparent; /* Fallback para navegadores que não suportam -webkit-text-fill-color */
+}
+
+span {
+    color: var(--content-secondary);
+    font: var(--paragraph-lg);
+}
+
+img[src*="message"],
+img[src*="arrow"],
+img[src*="play"] {
+    width: 20px;
+    height: 20px;
+}
+
+img[src*="logo"] {
+    margin-top: 4.75rem;
+    margin-left: 7.5rem;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6.75rem;
+    margin-top: 5.56rem;
+    max-width: 68.625rem;
+    margin-inline: 8.375rem;
+
+    & div:nth-child(1) {
+        display: grid;
+
+        & #subtitle {
+            margin-top: 3.68rem;
+
+            .flex {
+                display: flex;
+                gap: .5rem;
+            }
+
+            .margin-subtitle {
+                margin-bottom: 2.25rem;
+            }
+
+        }
+
+    }
+}
+
+form {
+    max-width: 30rem;
+    display: grid;
+    gap: 1rem;
+
+    & .input-size {
+        display: grid;
+        overflow: hidden;
+        gap: .5rem;
+    }
+}
+
+input[type="number"] {
+    width: 6rem;
+    padding: .75rem;
+    background-color: var(--background-secondary);
+    color: var(--content-primary);
+    font: var(--display-sm);
+}
+
+#input-checkbox {
+    display: flex;
+    gap: 5px;
+    margin-top: 1.25rem;
+}
+
+.drag-position {
+    position: relative;
+
+    & img {
+        width: 30px;
+        height: 20px;
+    }
+
+    & input[type="checkbox"] {
+        position: absolute;
+        inset: all;
+        opacity: 0;
+    }
+}
+
+
+#input-numbers {
+    display: flex;
+    margin-top: 2.5rem;
+    gap: .75rem;
+    overflow: hidden;
+}
+
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+button {
+    margin-top: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    font: var(--label-md);
+    color: var(--content-primary);
+    width: 30.125rem;
+    height: 3.5rem;
+    background-color: var(--background-tertiary);
 }
