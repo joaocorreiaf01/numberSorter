@@ -15,8 +15,8 @@ form.onsubmit = (event) => {
         maxRange: parseInt(maxRange.value),
     }
 
-    const resultViewNumbersTotal = totalRandomNumbers(newSortedNumber)
-    createElements(resultViewNumbersTotal)
+    const listNumbersTotal = totalRandomNumbers(newSortedNumber)
+    createElements(listNumbersTotal)
 }
 
 function getRandomNumber (newSortedNumber){
@@ -25,10 +25,13 @@ function getRandomNumber (newSortedNumber){
 
 function totalRandomNumbers(newSortedNumber) {
     let total = []
-    
+
     for (let i = 0; i < newSortedNumber.numToDraw; i++) {
         const totalNumbers = getRandomNumber(newSortedNumber)
-        total.push(totalNumbers)
+
+        if (!total.includes(totalNumbers)) {
+            total.push(totalNumbers)
+        }
     }
 
     return total
