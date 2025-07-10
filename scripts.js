@@ -64,7 +64,6 @@ function totalRandomNumbers(newSortedNumber) {
         }
     }
 
-
     return total
 }
 
