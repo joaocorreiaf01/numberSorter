@@ -199,3 +199,58 @@ button {
     height: 3.5rem;
     background-color: var(--background-tertiary);
 }
+
+
+.result-view {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.result {
+    display: none;
+    gap: 1.5rem;
+
+}
+
+.numbers-result {
+    display: flex;
+    gap: 1rem;
+    padding: .3rem;
+
+    & .show-result {
+        position: relative;
+        display: inline-flex; 
+        justify-content: center;
+        align-items: center;
+
+
+        width: 4rem; 
+        height: 4rem;
+
+        padding: 0;
+
+        transform: rotate(0deg);
+        transform-origin: center center;
+
+        color: var(--color-inverse);
+        
+        font: var(--display-sm);
+    }
+
+    & .show-result::before {
+        content: ''; /* Essencial para pseudo-elementos */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    
+        background-color: var(--content-brand);
+        border-radius: .5rem;
+        
+        transform: rotate(-20deg);
+        transform-origin: center center;
+        
+        z-index: -1;
+    }
+}
