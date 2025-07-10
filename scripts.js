@@ -6,8 +6,10 @@ const maxRange = document.querySelector("#maxRange")
 const resultChildren = document.querySelector(".numbers-result")
 const result = document.querySelector(".result")
 
+
 form.onsubmit = (event) => {
     event.preventDefault()
+
 
     const newSortedNumber = {
         numToDraw: parseInt(numToDraw.value),
@@ -17,7 +19,15 @@ form.onsubmit = (event) => {
 
     const listNumbersTotal = totalRandomNumbers(newSortedNumber)
     createElements(listNumbersTotal)
+
+    numToDraw.value = ""
+    minRange.value = ""
+    maxRange.value = ""
+    
+    numToDraw.focus()
 }
+
+
 
 function getRandomNumber (newSortedNumber){
     return Math.floor(Math.random() * (newSortedNumber.maxRange - newSortedNumber.minRange + 1 )) + newSortedNumber.minRange

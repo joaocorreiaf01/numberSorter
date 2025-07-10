@@ -105,7 +105,7 @@ img[src*="logo"] {
 header {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     gap: 6.75rem;
     margin-top: 5.56rem;
     max-width: 68.625rem;
@@ -209,13 +209,16 @@ button {
 .result {
     display: none;
     gap: 1.5rem;
-
 }
 
 .numbers-result {
     display: flex;
     gap: 1rem;
     padding: .3rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 100%;
+    scroll-behavior: smooth;
 
     & .show-result {
         position: relative;
@@ -254,3 +257,17 @@ button {
         z-index: -1;
     }
 }
+
+.numbers-result::-webkit-scrollbar {
+  height: 8px;
+}
+
+.numbers-result::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.numbers-result::-webkit-scrollbar-thumb {
+  background-color: var(--content-brand);
+  border-radius: 4px;
+}
+
