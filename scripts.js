@@ -42,8 +42,10 @@ repeatNumber.addEventListener("change", () => {
 
 // Gera um número aleatório
 function getRandomNumber (newSortedNumber){
+    // Aplica destructuring assignment para armazenar as propriedades do objeto em variáveis
+    const {numToDraw, minRange, maxRange} = newSortedNumber
 
-    return Math.floor(Math.random() * (newSortedNumber.maxRange - newSortedNumber.minRange + 1 )) + newSortedNumber.minRange
+    return Math.floor(Math.random() * (maxRange - minRange + 1 )) + minRange
 }
 
 // Enquanto for menor que a quantidade de numeros que devem ser sorteados, gera números aleatórios
